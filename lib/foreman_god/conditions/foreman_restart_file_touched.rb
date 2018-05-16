@@ -11,7 +11,7 @@ module God
       end
 
       def process_start_time
-        Time.parse(`ps -o lstart= -p #{self.watch.pid}`) rescue nil
+        Time.parse(`LANG=en ps -o lstart= -p #{self.watch.pid}`) rescue nil
       end
 
       def restart_file_modification_time
